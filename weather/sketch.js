@@ -45,7 +45,7 @@ async function getWeather() {
 
   //let unit = '&units=imperial';
 
-  const res = await fetch('https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?zip='+zip+'&APPID=8e2f0046b8abe8dbaa9b65b3e4a1ee05', {
+  const res = await fetch('https://api.openweathermap.org/data/2.5/weather?zip='+zip+'&APPID=8e2f0046b8abe8dbaa9b65b3e4a1ee05', {
       mode: 'cors'
   });
 
