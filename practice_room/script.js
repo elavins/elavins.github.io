@@ -12,18 +12,16 @@ import {GLTFLoader} from 'https://unpkg.com/three/examples/jsm/loaders/GLTFLoade
 
 let camera, scene, renderer;
 let aspect, fov;
-let instrument;
+let instrument, sel;
 
 let bbox, bboxPiano, bboxChair;
 let room, model, chair, piano;
 
-let isSitting = false;
-let isWalking = false;
-let isPlaying = false;
-
 let thighL, thighR, calveL, calveR, lowerarmL, lowerarmR, upperarmL, upperarmR;
 
 const loader = new GLTFLoader();
+
+let points = 0;
 
 const materials = {
     instrument: new THREE.MeshPhongMaterial({color: 0xffff00}),
@@ -36,26 +34,21 @@ const materials = {
 //---------------visuals for player actions---------------//
 
 const action = {
+    isSitting: false,
+    isWalking: false,
+    isPlaying: false,
     play: () => {
-        upperarmL.rotation.x = -0.1;
-        lowerarmL.rotation.x = 2;
-        lowerarmR.rotation.x = 1;
-        lowerarmL.rotation.z = -0.6;
-        lowerarmR.rotation.z = 0.6;
-        instrument.rotation.x = -0.4;
-        instrument.position.set(0.25, 0.4, 0.25);
+        instruments[sel].playPos();
+        addPoint();
+        console.log(points);
     },
     stopPlay: () => {
-        isPlaying = false;
-        lowerarmL.rotation.x = 1;
-        lowerarmR.rotation.x = 1;
-        lowerarmL.rotation.z = -0.6;
-        lowerarmR.rotation.z = 0.6;
-        instrument.rotation.x = 0;
+        action.isPlaying = false;
+        instruments[sel].restPos();
     },
     forward: () => {
         updatebbox();
-        if (!isSitting) {
+        if (!action.isSitting) {
             if (thighL.rotation.z > 0.3) {
                 thighL.rotation.z *= -1;
                 thighR.rotation.z *= -1;
@@ -79,7 +72,7 @@ const action = {
     },
     back: () => {
         updatebbox();
-        if (!isSitting) {
+        if (!action.isSitting) {
             if (thighL.rotation.z > 0.3) {
                 thighL.rotation.z *= -1;
                 thighR.rotation.z *= -1;
@@ -92,7 +85,7 @@ const action = {
         }  
     },
     sit: () => {
-        isSitting = true;
+        action.isSitting = true;
         thighL.rotation.z = 1;
         thighR.rotation.z = -1;
         calveL.rotation.z = -2;
@@ -128,11 +121,11 @@ const keyhandler = {
             controller[e.keyCode].pressed = false;
         }
         if (!controller[87].pressed) {
-            isWalking = false;
+            action.isWalking = false;
             action.stand();
         }
         if (!controller[32].pressed) {
-            isSitting = false;
+            action.isSitting = false;
             action.stand();
         }
     }
@@ -140,21 +133,82 @@ const keyhandler = {
 
 //-------------sound-related objects and variables--------------//
 
-const synth = new Tone.Synth().toDestination();
+let synth;
 const now = Tone.now();
 
 const notes = ["C","D","E","F","G","A","B"];
 
 const instruments = {
     airtube: {
-        value: 1,
-        geo: new THREE.CylinderGeometry( 0.03, 0.06, 0.6),
-        timbre: new Tone.Synth().toDestination()
+        geo: new THREE.CylinderGeometry(0.03, 0.06, 0.6),
+        timbre: new Tone.Synth().toDestination(),
+        make: () => {
+            instrument = new THREE.Mesh(instruments.airtube.geo, materials.instrument);
+            instrument.rotation.x = -0.4;
+            instrument.position.set(0.25, 0.4, 0.25);
+            instrument.castShadow = true;
+            instrument.receiveShadow = true;
+
+            synth = instruments.airtube.timbre;
+        },
+        playPos: () => {
+            lowerarmL.rotation.x = 2.2;
+            lowerarmL.rotation.z = -0.4;
+
+            lowerarmR.rotation.x = 1.3;
+            lowerarmR.rotation.z = 0.6;
+
+            instrument.rotation.x = -0.4;
+          //  instrument.position.set(0.25, 0.4, 0.25);
+        },
+        restPos: () => {
+            upperarmL.rotation.y = 0;
+            lowerarmL.rotation.x = 1.8;
+            lowerarmL.rotation.z = -0.5;
+
+            upperarmR.rotation.y = 0;
+            lowerarmR.rotation.x = 1.3;
+            lowerarmR.rotation.z = 0.6;
+
+            instrument.rotation.x = 0;
+        }
     },
     trumpet: {
-        value: 2,
-        geo: new THREE.CylinderGeometry( 0.06, 0.03, 0.3),
-        timbre: new Tone.AMSynth().toDestination()
+        geo: new THREE.CylinderGeometry(0.03, 0.1, 0.6),
+        timbre: new Tone.AMSynth().toDestination(),
+        make: () => {
+            instrument = new THREE.Mesh(instruments.trumpet.geo, materials.instrument);
+            instrument.rotation.x = 0;
+            instruments.trumpet.restPos();
+            instrument.castShadow = true;
+            instrument.receiveShadow = true;
+
+            synth = instruments.trumpet.timbre;
+        },
+        playPos: () => {
+            upperarmL.rotation.y = -0.6;
+            lowerarmL.rotation.x = 2;
+            lowerarmL.rotation.z = -0.6;
+            
+            upperarmR.rotation.y = 0.6;
+            lowerarmR.rotation.x = 2;
+            lowerarmR.rotation.z = 0.6;
+
+            instrument.rotation.x = -1.5;
+            instrument.position.set(0.25, 0.65, 0.4);
+        },
+        restPos: () => {
+            upperarmL.rotation.y = -0.6;
+            lowerarmL.rotation.x = 1;
+            lowerarmL.rotation.z = -0.4;
+            
+            upperarmR.rotation.y = 0.6;
+            lowerarmR.rotation.x = 1;
+            lowerarmR.rotation.z = 0.4;
+
+            instrument.rotation.x = 0;
+            instrument.position.set(0.25, 0.35, 0.4);
+        }
     }
 }
 
@@ -198,6 +252,7 @@ const metronome = {
     },
     stop: () => {Tone.Transport.stop()}
 }
+
 
 //
 //
@@ -261,11 +316,7 @@ function init() {
     scene.add(room);
 
     //--------add instrument--------//
-    instrument = new THREE.Mesh(instruments.airtube.geo, materials.instrument);
-    instrument.rotation.x = -0.4;
-    instrument.position.set(0.25, 0.4, 0.25);
-    instrument.castShadow = true;
-    instrument.receiveShadow = true;
+    instruments.airtube.make();
 
     //--------add player--------//
     loader.load('assets/model.glb', function(gltf) {
@@ -357,6 +408,10 @@ function fillDOM() {
     document.getElementById("metro").addEventListener('click', metronome.press);
     document.getElementById("instrument").addEventListener('click', changeInstr);
 
+    var p = document.createElement('p');
+    p.innerHTML = "practice points: " + points;
+    document.getElementById("info").appendChild(p);
+
     for (var i in instruments) {
         var opt = document.createElement("option");
         var txt = document.createTextNode(i);
@@ -364,6 +419,15 @@ function fillDOM() {
         opt.setAttribute("value",i);
         document.getElementById("instrument").appendChild(opt);
     }
+
+    sel = document.getElementById("instrument").value;
+}
+
+
+function addPoint() {
+    points++;
+    var p = document.getElementsByTagName('p');
+    p.innerHTML = "practice points: " + points;
 }
 
 function animation(time) {
@@ -379,8 +443,11 @@ const executeMoves = () => {
 
 
 function changeInstr() {
-    let sel = document.getElementById("instrument").value;
-  //  if (sel === "trumpet") {instrument.rotation.x = 2;}
+    sel = document.getElementById("instrument").value;
+    model.remove(instrument);
+    instruments[sel].make();
+    instruments[sel].restPos();
+    model.add(instrument);
 }
 
 function updatebbox() {
