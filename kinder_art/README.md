@@ -1,24 +1,12 @@
-# Practice room
+# Kindergarden Art Hour
 
-Experiment using Blender, Threejs, and Tonejs.
+Experiment using Threejs and HTML5
 
 ## To-do
 
 ### Animations
 
-- make model turn around its center
-- make model "lean" when turning while sitting (instead of spinning)
-- fix walking anim
-- add music stand
-- add mirror
-
-### Gameplay
-
-- fix bbox/collision issues
-- fix metronome button presses
-- add practice meter
-- add recorder
-- add tuning minigame
-- add "achievements"
-- ~~add instrument changes~~
-    - add more instruments!
+- add more colors
+- add "handing in" animation
+- add teacher
+- make "good job" handwritten and add random location/stickers
