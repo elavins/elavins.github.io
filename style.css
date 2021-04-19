@@ -17,6 +17,10 @@ a {
   text-decoration: none;
 }
 
+a:hover {
+    color: white;
+}
+
 .title {
     display: inline-block;
     font-size: 1.5em;
@@ -38,10 +42,12 @@ a {
 }
 
 .cell {
- /*   border: 1px solid #E0CA3C;*/
-    padding-left: 4em;
+    padding-left: 0;
 }
 
+.project-title {
+    padding-left: 0;
+}
 
 .project-title li {
     font-size: 2em;
@@ -57,6 +63,9 @@ a {
     padding-left: 1em;
 }
 
+.project-description li:first-child {
+    padding-top: 0.5em;
+}
 
 .project-description li:last-child {
     padding-bottom: 1em;
