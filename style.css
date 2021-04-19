@@ -1,0 +1,95 @@
+* {
+  box-sizing: border-box;
+  color: #E0CA3C;
+}
+
+body {
+  background: #000F08;
+  padding: 0;
+  height: 100vh;
+  margin: 0;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.title {
+    display: inline-block;
+    font-size: 1.5em;
+    font-weight: 700;
+    margin-bottom: 0.5em;
+}
+
+.main {
+  background: #000F08;
+  height: calc(100vh - 10px);
+  box-shadow: 0 0 3px rgba(black, 0.33);
+
+ /* display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: minmax(100px, auto);
+  grid-gap: 0.5em;
+  justify-content: center;*/
+}
+
+.cell {
+ /*   border: 1px solid #E0CA3C;*/
+    padding-left: 4em;
+}
+
+
+.project-title li {
+    font-size: 2em;
+    list-style: none;
+}
+
+.project-description li {
+    font-weight: 400;
+    font-size: 0.5em;
+    border: none;
+    border-left: 1px solid #E0CA3C;
+    margin-left: 2em;
+    padding-left: 1em;
+}
+
+
+.project-description li:last-child {
+    padding-bottom: 1em;
+}
+
+.fake-sib {
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+}
+
+
+.page-header {
+  grid-column: 1 / -1;
+  background: #ffcdd2;
+}
+
+.page-sidebar {
+  grid-column: 1 / 2;
+  grid-row: 2 / 4;
+  background: #e1bee7;
+}
+.page-nav {
+  grid-column: 2 / 3;
+  background: #bbdefb;
+}
+.page-main {
+  grid-column: 2 / 3;
+  background: #dcedc8;
+}
+.page-footer {
+  grid-column: 1 / -1;
+  background: #ffecb3;
+}
+
+details p {
+  text-transform: none;
+  text-align: left;
+}
