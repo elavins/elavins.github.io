@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 title: "Library Design"
 permalink: /librarydesign/
 ---
