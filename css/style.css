@@ -11,6 +11,11 @@ body {
   font-weight: 400;
 }
 
+section {
+  width: 100%;
+  max-width: 800px;
+}
+
 a {text-decoration: none;}
 
 a:hover {color: white;}
@@ -31,6 +36,7 @@ li:first-child {padding-top: 0.5em;}
 li:last-child {padding-bottom: 1em;}*/
 
 img {
-    max-width: 100%;
-    display: inline-block;
+    max-width: 80%;
+    display: block;
+    margin: auto;
 }
