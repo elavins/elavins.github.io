@@ -4,7 +4,7 @@
 }
 
 body {
-	background-color: #000F08;
+  background-color: #000F08;
   padding: 0;
   margin: 0;
   font-family: 'Roboto Mono', monospace;
@@ -17,20 +17,20 @@ a:hover {color: white;}
 
 h1 {
     display: inline-block;
-    font-size: 1.25em;
     font-weight: 700;
     margin-bottom: 0.5em;
 }
 
 li {
     font-weight: 400;
-    font-size: 0.65em;
     border: none;
-    border-left: 1px solid #E0CA3C;
-    margin-left: 2em;
-    padding-left: 1em;
 }
-
+/*
 li:first-child {padding-top: 0.5em;}
 
-li:last-child {padding-bottom: 1em;}
+li:last-child {padding-bottom: 1em;}*/
+
+img {
+    max-width: 100%;
+    display: inline-block;
+}
