@@ -4,8 +4,12 @@ Repository for personal projects while trying to learn things.
 
 ## Projects
 
-- Mar. 2021_ [Practice room](/practice_room/): Experiment using Blender, Threejs, and Tonejs
-- Feb. 2021_ [Kindergarden art hour](/kinder_art/): Experiment using Threejs and HTML5
-- Jan. 2021_ [Sci-fi weather](/weather/): Experiment using p5js while learning about APIs
-- Dec. 2020_ [Lemmings](/lemmings/): Experiment using HTML5 and JS
-- Nov. 2020_ [Case Study: Practices in library website design](librarydesign/)
+- 2021.Mar_[Practice room](/practice_room/)
+--- Tools: Blender, Threejs, and Tonejs
+- 2021.Feb_[Kindergarden art period](/kinder_art/)
+--- Tools: Threejs and HTML5
+- 2021.Jan_[Sci-fi weather app](/weather/)
+--- Tools: p5js
+- 2020.Dec_[Lemmings](/lemmings/)
+--- Tools: HTML5 and vanilla JS
+- 2020.Nov_[Case Study: Practices in library website design](librarydesign/)
