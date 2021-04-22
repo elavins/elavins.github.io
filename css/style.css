@@ -16,7 +16,13 @@ section {
   max-width: 800px;
 }
 
-a {text-decoration: none;}
+a {
+  text-decoration: none;
+  font-weight: 700;
+    background-color: #E0CA3C;
+    padding: 0 5px;
+    color: #000F08;
+}
 
 a:hover {color: white;}
 
