@@ -1,3 +1,8 @@
+---
+layout: default
+title: "Emily Lavins"
+---
+
 Repository for personal projects while trying to learn things.
 
 ## Projects
