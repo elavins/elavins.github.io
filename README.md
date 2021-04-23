@@ -1,5 +1,3 @@
-# Sketches
-
 Repository for personal projects while trying to learn things.
 
 ## Projects
