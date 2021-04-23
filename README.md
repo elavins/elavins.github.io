@@ -1,4 +1,7 @@
-% Emily Lavins
+---
+layout: default
+title: "Emily Lavins"
+---
 
 Hello! This is a repository for personal projects while trying to teach myself new things.
 
