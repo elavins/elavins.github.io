@@ -1,10 +1,10 @@
 * {
   box-sizing: border-box;
-  color: #E0CA3C;
+  color: #000F08;
 }
 
 body {
-  background-color: #000F08;
+  background-color: #F4F4F6;
   padding: 0;
   margin: 0;
   font-family: 'Roboto Mono', monospace;
