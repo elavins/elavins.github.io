@@ -1,6 +1,7 @@
 ---
 layout: default
 title: "Emily Lavins"
+permalink: /
 ---
 
 Hello! This is a repository for personal projects while trying to teach myself new things.
