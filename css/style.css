@@ -26,6 +26,17 @@ a {
 
 a:hover {color: white;}
 
+img {
+  width: 400px;
+  position: absolute;
+  top: 100px;
+  left: 100px;
+  z-index: -1;
+  display: none;
+}
+
+a:hover + img {display: block;}
+
 h1 {
     display: inline-block;
     font-weight: 700;
@@ -40,9 +51,3 @@ li {
 li:first-child {padding-top: 0.5em;}
 
 li:last-child {padding-bottom: 1em;}*/
-
-img {
-    max-width: 80%;
-    display: block;
-    margin: auto;
-}
