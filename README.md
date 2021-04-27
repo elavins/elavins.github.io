@@ -8,7 +8,7 @@ Hello! This is a repository for personal projects while trying to teach myself n
 
 ## Projects
 
-- 2021.Mar_[Practice room](/practice_room/)
+- 2021.Mar_[Practice room](/practice_room/) ![Thumbnail gif animation](/images/practice-thumb.gif)
     - Small interactive web experience inspired by music school practice rooms. Pace around and practice your instrument!
     - Models created in **Blender**; code written using **Threejs** and **Tonejs**.
 - 2021.Feb_[Kindergarden art period](/kinder_art/) ![Thumbnail gif animation](/images/kinder-thumb.gif)
