@@ -4,7 +4,7 @@
 //
 
 import * as TONE from 'https://unpkg.com/tone/build/Tone.js';
-import * as THREE from 'https://unpkg.com/three/build/three.module.js';
+import * as THREE from 'https://unpkg.com/three@0.128.0/build/three.module.js';
 
 import {GLTFLoader} from 'https://unpkg.com/three/examples/jsm/loaders/GLTFLoader.js';
 
