@@ -8,10 +8,10 @@ Hello! This is a repository for personal projects while trying to teach myself n
 
 ## Projects
 
-- 2021.Mar_[Practice room](/practice_room/) ![picture alt](http://via.placeholder.com/200x150 "Title is optional")
+- 2021.Mar_[Practice room](/practice_room/)
     - Small interactive web experience inspired by music school practice rooms. Pace around and practice your instrument!
     - Models created in **Blender**; code written using **Threejs** and **Tonejs**.
-- 2021.Feb_[Kindergarden art period](/kinder_art/) ![Thumbnail gif animation](http://via.placeholder.com/200x150 "Title is optional")
+- 2021.Feb_[Kindergarden art period](/kinder_art/) ![Thumbnail gif animation](/images/kinder-thumb.gif)
     - Interactive web experience inspired by memories of doodling in grade school. Doodle on the paper (or the desk) and get a savable file with a gold star from the teacher. Maybe put it on the refrigerator?
     - Created as an experiment in combining **Threejs** with **HTML5 Canvas**.
 - 2021.Jan_[Sci-fi weather app](/weather/)
