@@ -35,6 +35,21 @@ img {
   display: none;
 }
 
+img:nth-child(2n) {
+  top: 30%;
+  left: 30%;
+}
+
+img:nth-child(2n+1) {
+  top: 40%;
+  left: 10%;
+}
+
+img:nth-child(3n) {
+  top: 35%;
+  left: 20%;
+}
+
 a:hover + img {display: block;}
 
 h1 {
