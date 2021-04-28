@@ -4,7 +4,7 @@ title: "Emily Lavins"
 permalink: /
 ---
 
-Hello! This is a repository for personal projects while trying to teach myself new things.
+Hello! I am a library paraprofessional who likes learning new technologies and drawing comics. This is a repository for organizing personal projects.
 
 ## Projects
 
