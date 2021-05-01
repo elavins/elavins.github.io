@@ -20,5 +20,3 @@ Hello! I am a library paraprofessional who likes learning new technologies and d
 - 2020.Dec_[Lemmings](/lemmings/) ![Thumbnail gif animation](/images/lemmings-thumb.gif)
     - Game imitating the puzzle game *Lemmings*. Mostly broken, but it was an exciting early learning experience and I hope to return to it someday.
     - Created while learning about **HTML5** and **vanilla JS**.
-- 2020.Nov_[Designing a library website](librarydesign/)
-    - Case study and proposed design for a library website. Created while learning about human-computer interaction and its applications in web UX.
